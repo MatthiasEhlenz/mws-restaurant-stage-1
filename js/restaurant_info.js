@@ -1,6 +1,6 @@
 /**
  * @Date:   2018-04-01T16:24:43+02:00
- * @Last modified time: 2018-04-01T19:15:53+02:00
+ * @Last modified time: 2018-04-01T23:12:47+02:00
  */
 
 
@@ -60,7 +60,7 @@ fillRestaurantHTML = (restaurant = self.restaurant) => {
   name.innerHTML = restaurant.name;
 
   const address = document.getElementById('restaurant-address');
-  address.innerHTML = restaurant.address;
+  address.innerHTML = 'Location:<br>' + restaurant.neighborhood+'<br>'+restaurant.address;
 
   const image = document.getElementById('restaurant-img');
   image.className = 'restaurant-img'
@@ -90,7 +90,7 @@ fillRestaurantHoursHTML = (operatingHours = self.restaurant.operating_hours) => 
     row.appendChild(day);
 
     const time = document.createElement('td');
-    time.innerHTML = operatingHours[key];
+    time.innerHTML = operatingHours[key].replace(',','<br>');
     row.appendChild(time);
 
     hours.appendChild(row);

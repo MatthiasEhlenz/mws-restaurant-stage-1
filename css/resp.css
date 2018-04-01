@@ -1,0 +1,79 @@
+/**
+ * @Date:   2018-04-01T23:45:14+02:00
+ * @Last modified time: 2018-04-02T00:34:02+02:00
+ */
+
+
+
+ @media screen and (min-width:550px) {
+   nav h1 a {
+     font-size: 0.7em;
+  letter-spacing: 8px;
+   }
+ }
+
+ @media screen and (min-width:650px) {
+   .filter-options h2 {
+     display: inline-block;
+    padding-top: 0;
+   }
+ }
+
+ @media screen and (min-width:720px) {
+   #restaurant-address, #restaurant-hours {
+   	width: 50%;
+   	margin: 0;
+   }
+
+   nav h1 a {
+     font-size: 0.9em;
+  letter-spacing: 10px;
+   }
+ }
+
+ @media screen and (min-width:960px) {
+   .inside #map-container {
+     background: blue none repeat scroll 0 0;
+   	align-self: stretch;
+     width: 50%;
+     order: 0;
+     height: auto;
+   }
+
+   #restaurant-address, #restaurant-hours {
+   	width: 100%;
+   	margin-bottom: 1em;
+   }
+
+   #restaurant-container{
+   	padding: 0 2em;
+   	width: calc(50% - 4em);
+   }
+   #reviews-list li {
+     width: calc((100% - 20px)/2);
+   }
+
+ }
+
+
+ @media screen and (min-width:1280px) {
+   #restaurant-address, #restaurant-hours {
+   	width: 50%;
+   	margin: 0;
+   }
+
+   #restaurant-hours td {
+     font-size: 0.8em
+   }
+
+   #reviews-list li {
+     width: calc((100% - 30px)/3);
+   }
+ }
+
+
+@media screen and (min-width:1440px) {
+  #restaurant-hours td {
+    font-size: 1em
+  }
+}
