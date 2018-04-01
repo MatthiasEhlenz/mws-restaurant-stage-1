@@ -1,3 +1,10 @@
+/**
+ * @Date:   2018-04-01T16:24:43+02:00
+ * @Last modified time: 2018-04-01T19:15:53+02:00
+ */
+
+
+
 let restaurant;
 var map;
 
@@ -118,20 +125,24 @@ fillReviewsHTML = (reviews = self.restaurant.reviews) => {
 createReviewHTML = (review) => {
   const li = document.createElement('li');
   const name = document.createElement('p');
+
+  const date = document.createElement('span');
+  date.innerHTML = review.date;
+
   name.innerHTML = review.name;
+  name.appendChild(date);
   li.appendChild(name);
 
-  const date = document.createElement('p');
-  date.innerHTML = review.date;
-  li.appendChild(date);
-
-  const rating = document.createElement('p');
+  const ratingContent = document.createElement('div');
+  const rating = document.createElement('span');
   rating.innerHTML = `Rating: ${review.rating}`;
-  li.appendChild(rating);
+  rating.className ='ratingbox';
+  ratingContent.appendChild(rating);
 
   const comments = document.createElement('p');
   comments.innerHTML = review.comments;
-  li.appendChild(comments);
+  ratingContent.appendChild(comments);
+  li.appendChild(ratingContent);
 
   return li;
 }
