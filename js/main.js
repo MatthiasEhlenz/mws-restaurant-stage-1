@@ -1,3 +1,10 @@
+/**
+ * @Date:   2018-04-01T16:24:43+02:00
+ * @Last modified time: 2018-04-02T14:31:46+02:00
+ */
+
+
+
 let restaurants,
   neighborhoods,
   cuisines
@@ -140,7 +147,14 @@ createRestaurantHTML = (restaurant) => {
 
   const image = document.createElement('img');
   image.className = 'restaurant-img';
-  image.src = DBHelper.imageUrlForRestaurant(restaurant);
+  let imgsrc = DBHelper.imageUrlForRestaurant(restaurant);
+  image.src = suffixImg(imgsrc,'270');
+  let imgsrcs = `${suffixImg(imgsrc,'270')} 1x, ${suffixImg(imgsrc,'540')} 2x, ${suffixImg(imgsrc,'800')} 3x`;
+  image.setAttribute('srcset',imgsrcs);
+  let sizes = '(max-width:650px) 550px, (min-width:650px) 360px'
+  image.setAttribute('sizes', sizes);
+  let alt = `${restaurant.name} in ${restaurant.neighborhood}`;
+  image.setAttribute('alt',alt);
   li.append(image);
 
   const name = document.createElement('h1');
@@ -161,6 +175,10 @@ createRestaurantHTML = (restaurant) => {
   li.append(more)
 
   return li
+}
+
+suffixImg = (img, suffix) => {
+  return img.replace('.',`-${suffix}.`).replace('img','img-res');
 }
 
 /**

@@ -1,6 +1,6 @@
 /**
  * @Date:   2018-04-01T16:24:43+02:00
- * @Last modified time: 2018-04-01T23:12:47+02:00
+ * @Last modified time: 2018-04-02T16:43:24+02:00
  */
 
 
@@ -62,7 +62,19 @@ fillRestaurantHTML = (restaurant = self.restaurant) => {
   const address = document.getElementById('restaurant-address');
   address.innerHTML = 'Location:<br>' + restaurant.neighborhood+'<br>'+restaurant.address;
 
+
+
+
+
   const image = document.getElementById('restaurant-img');
+  let imgsrc = DBHelper.imageUrlForRestaurant(restaurant);
+  image.src = suffixImg(imgsrc,'270');
+  let imgsrcs = `${suffixImg(imgsrc,'270')} 270w, ${suffixImg(imgsrc,'540')} 540w, ${suffixImg(imgsrc,'800')} 800w`;
+  image.setAttribute('srcset',imgsrcs);
+  let sizes = '(max-width:650px) 550px, (min-width:650px) 800px'
+  image.setAttribute('sizes', sizes);
+  let alt = `${restaurant.name} in ${restaurant.neighborhood}`;
+  image.setAttribute('alt',alt);
   image.className = 'restaurant-img'
   image.src = DBHelper.imageUrlForRestaurant(restaurant);
 
@@ -75,6 +87,10 @@ fillRestaurantHTML = (restaurant = self.restaurant) => {
   }
   // fill reviews
   fillReviewsHTML();
+}
+
+suffixImg = (img, suffix) => {
+  return img.replace('.',`-${suffix}.`).replace('img','img-res');
 }
 
 /**
