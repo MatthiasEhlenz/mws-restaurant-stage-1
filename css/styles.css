@@ -1,6 +1,6 @@
 /**
  * @Date:   2018-04-01T16:24:43+02:00
- * @Last modified time: 2018-04-02T00:52:46+02:00
+ * @Last modified time: 2018-04-02T19:04:07+02:00
  */
 
 
@@ -197,7 +197,7 @@ nav h1 a {
   min-height: 248px;
   min-width: 100%;
 }
-#restaurants-list li h1 {
+#restaurants-list li h2 {
   color: #f18200;
   font-family: Arial,sans-serif;
   font-size: 14pt;

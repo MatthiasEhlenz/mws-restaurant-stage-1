@@ -1,6 +1,6 @@
 /**
  * @Date:   2018-04-01T16:24:43+02:00
- * @Last modified time: 2018-04-02T16:43:24+02:00
+ * @Last modified time: 2018-04-02T18:45:06+02:00
  */
 
 
@@ -61,10 +61,6 @@ fillRestaurantHTML = (restaurant = self.restaurant) => {
 
   const address = document.getElementById('restaurant-address');
   address.innerHTML = 'Location:<br>' + restaurant.neighborhood+'<br>'+restaurant.address;
-
-
-
-
 
   const image = document.getElementById('restaurant-img');
   let imgsrc = DBHelper.imageUrlForRestaurant(restaurant);

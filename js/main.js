@@ -1,6 +1,6 @@
 /**
  * @Date:   2018-04-01T16:24:43+02:00
- * @Last modified time: 2018-04-02T14:31:46+02:00
+ * @Last modified time: 2018-04-02T19:02:19+02:00
  */
 
 
@@ -157,7 +157,7 @@ createRestaurantHTML = (restaurant) => {
   image.setAttribute('alt',alt);
   li.append(image);
 
-  const name = document.createElement('h1');
+  const name = document.createElement('h2');
   name.innerHTML = restaurant.name;
   li.append(name);
 
